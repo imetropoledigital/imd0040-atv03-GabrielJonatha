@@ -14,11 +14,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: ClassTest.existsPerson
-      id: classtest-existsperson
+    - name: ClassTest.existsPerson1
+      id: classtest-existsperson1
       uses: education/autograding-command-grader@v1
       with:
-        test-name: ClassTest.existsPerson
+        test-name: ClassTest.existsPerson1
         setup-command: ''
         command: gradle test --tests ClassTest.existsPerson
         timeout: 1
@@ -116,7 +116,7 @@ jobs:
     - name: Autograding Reporter
       uses: education/autograding-grading-reporter@v1
       env:
-        CLASSTEST-EXISTSPERSON_RESULTS: "${{steps.classtest-existsperson.outputs.result}}"
+        CLASSTEST-EXISTSPERSON1_RESULTS: "${{steps.classtest-existsperson1.outputs.result}}"
         CLASSTEST-EXISTSATTRINPERSON_RESULTS: "${{steps.classtest-existsattrinperson.outputs.result}}"
         CLASSTEST-EXISTSMETHODINPERSON_RESULTS: "${{steps.classtest-existsmethodinperson.outputs.result}}"
         CLASSTEST-EXISTSMUSICIAN_RESULTS: "${{steps.classtest-existsmusician.outputs.result}}"
@@ -128,4 +128,4 @@ jobs:
         CLASSTEST-EXISTSATTRINGUITARPLAYER_RESULTS: "${{steps.classtest-existsattringuitarplayer.outputs.result}}"
         CLASSTEST-EXISTSMETHODPLAYGUITARINGUITARPLAYER_RESULTS: "${{steps.classtest-existsmethodplayguitaringuitarplayer.outputs.result}}"
       with:
-        runners: classtest-existsperson,classtest-existsattrinperson,classtest-existsmethodinperson,classtest-existsmusician,classtest-existsattrinmusician,classtest-existsmethodplayinmusician,classtest-existsguitarplayer,classtest-existsmusicianextendsperson,classtest-existsguitarplayerextendsmusician,classtest-existsattringuitarplayer,classtest-existsmethodplayguitaringuitarplayer
+        runners: classtest-existsperson1,classtest-existsattrinperson,classtest-existsmethodinperson,classtest-existsmusician,classtest-existsattrinmusician,classtest-existsmethodplayinmusician,classtest-existsguitarplayer,classtest-existsmusicianextendsperson,classtest-existsguitarplayerextendsmusician,classtest-existsattringuitarplayer,classtest-existsmethodplayguitaringuitarplayer
