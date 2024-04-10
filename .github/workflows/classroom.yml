@@ -1,0 +1,131 @@
+name: Autograding Tests
+'on':
+- push
+- workflow_dispatch
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: ClassTest.existsPerson
+      id: classtest-existsperson
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: ClassTest.existsPerson
+        setup-command: ''
+        command: gradle test --tests ClassTest.existsPerson
+        timeout: 1
+        max-score: 1
+    - name: ClassTest.existsAttrInPerson
+      id: classtest-existsattrinperson
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: ClassTest.existsAttrInPerson
+        setup-command: ''
+        command: gradle test --tests ClassTest.existsAttrInPerson
+        timeout: 1
+        max-score: 1
+    - name: ClassTest.existsMethodInPerson
+      id: classtest-existsmethodinperson
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: ClassTest.existsMethodInPerson
+        setup-command: ''
+        command: gradle test --tests ClassTest.existsMethodInPerson
+        timeout: 1
+        max-score: 1
+    - name: ClassTest.existsMusician
+      id: classtest-existsmusician
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: ClassTest.existsMusician
+        setup-command: ''
+        command: gradle test --tests ClassTest.existsMusician
+        timeout: 1
+        max-score: 1
+    - name: ClassTest.existsAttrInMusician
+      id: classtest-existsattrinmusician
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: ClassTest.existsAttrInMusician
+        setup-command: ''
+        command: gradle test --tests ClassTest.existsAttrInMusician
+        timeout: 1
+        max-score: 1
+    - name: ClassTest.existsMethodPlayInMusician
+      id: classtest-existsmethodplayinmusician
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: ClassTest.existsMethodPlayInMusician
+        setup-command: ''
+        command: gradle test --tests ClassTest.existsMethodPlayInMusician
+        timeout: 1
+        max-score: 1
+    - name: ClassTest.existsGuitarPlayer
+      id: classtest-existsguitarplayer
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: ClassTest.existsGuitarPlayer
+        setup-command: ''
+        command: gradle test --tests ClassTest.existsGuitarPlayer
+        timeout: 1
+        max-score: 1
+    - name: ClassTest.existsMusicianExtendsPerson
+      id: classtest-existsmusicianextendsperson
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: ClassTest.existsMusicianExtendsPerson
+        setup-command: ''
+        command: gradle test --tests ClassTest.existsMusicianExtendsPerson
+        timeout: 1
+        max-score: 1
+    - name: ClassTest.existsGuitarPlayerExtendsMusician
+      id: classtest-existsguitarplayerextendsmusician
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: ClassTest.existsGuitarPlayerExtendsMusician
+        setup-command: ''
+        command: gradle test --tests ClassTest.existsGuitarPlayerExtendsMusician
+        timeout: 1
+        max-score: 1
+    - name: ClassTest.existsAttrInGuitarPlayer
+      id: classtest-existsattringuitarplayer
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: ClassTest.existsAttrInGuitarPlayer
+        setup-command: ''
+        command: gradle test --tests ClassTest.existsAttrInGuitarPlayer
+        timeout: 1
+        max-score: 1
+    - name: ClassTest.existsMethodPlayGuitarInGuitarPlayer
+      id: classtest-existsmethodplayguitaringuitarplayer
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: ClassTest.existsMethodPlayGuitarInGuitarPlayer
+        setup-command: ''
+        command: gradle test --tests ClassTest.existsMethodPlayGuitarInGuitarPlayer
+        timeout: 1
+        max-score: 1
+    - name: Autograding Reporter
+      uses: education/autograding-grading-reporter@v1
+      env:
+        CLASSTEST-EXISTSPERSON_RESULTS: "${{steps.classtest-existsperson.outputs.result}}"
+        CLASSTEST-EXISTSATTRINPERSON_RESULTS: "${{steps.classtest-existsattrinperson.outputs.result}}"
+        CLASSTEST-EXISTSMETHODINPERSON_RESULTS: "${{steps.classtest-existsmethodinperson.outputs.result}}"
+        CLASSTEST-EXISTSMUSICIAN_RESULTS: "${{steps.classtest-existsmusician.outputs.result}}"
+        CLASSTEST-EXISTSATTRINMUSICIAN_RESULTS: "${{steps.classtest-existsattrinmusician.outputs.result}}"
+        CLASSTEST-EXISTSMETHODPLAYINMUSICIAN_RESULTS: "${{steps.classtest-existsmethodplayinmusician.outputs.result}}"
+        CLASSTEST-EXISTSGUITARPLAYER_RESULTS: "${{steps.classtest-existsguitarplayer.outputs.result}}"
+        CLASSTEST-EXISTSMUSICIANEXTENDSPERSON_RESULTS: "${{steps.classtest-existsmusicianextendsperson.outputs.result}}"
+        CLASSTEST-EXISTSGUITARPLAYEREXTENDSMUSICIAN_RESULTS: "${{steps.classtest-existsguitarplayerextendsmusician.outputs.result}}"
+        CLASSTEST-EXISTSATTRINGUITARPLAYER_RESULTS: "${{steps.classtest-existsattringuitarplayer.outputs.result}}"
+        CLASSTEST-EXISTSMETHODPLAYGUITARINGUITARPLAYER_RESULTS: "${{steps.classtest-existsmethodplayguitaringuitarplayer.outputs.result}}"
+      with:
+        runners: classtest-existsperson,classtest-existsattrinperson,classtest-existsmethodinperson,classtest-existsmusician,classtest-existsattrinmusician,classtest-existsmethodplayinmusician,classtest-existsguitarplayer,classtest-existsmusicianextendsperson,classtest-existsguitarplayerextendsmusician,classtest-existsattringuitarplayer,classtest-existsmethodplayguitaringuitarplayer
