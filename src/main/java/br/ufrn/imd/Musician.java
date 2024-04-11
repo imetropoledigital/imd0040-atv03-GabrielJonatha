@@ -7,6 +7,9 @@ public class Musician extends Person{
 
     public Musician(){
     }
+    public void play(){
+        
+    }
 
     public Musician(String name, String hometown,
                     boolean canPlayClassicalMusic,
@@ -19,7 +22,7 @@ public class Musician extends Person{
         this.canCompose = canCompose;
     }
 
-    public boolean isCanPlayClassicalMusic() {
+    public boolean CanPlayClassicalMusic() {
         return canPlayClassicalMusic;
     }
 
@@ -27,7 +30,7 @@ public class Musician extends Person{
         this.canPlayClassicalMusic = canPlayClassicalMusic;
     }
 
-    public boolean isCanImprovise() {
+    public boolean CanImprovise() {
         return canImprovise;
     }
 
@@ -35,7 +38,7 @@ public class Musician extends Person{
         this.canImprovise = canImprovise;
     }
 
-    public boolean isCanCompose() {
+    public boolean CanCompose() {
         return canCompose;
     }
 
