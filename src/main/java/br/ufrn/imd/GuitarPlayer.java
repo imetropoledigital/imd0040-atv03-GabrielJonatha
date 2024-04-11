@@ -1,7 +1,7 @@
 package br.ufrn.imd;
 
 public class GuitarPlayer extends Musician{
-    public int howManyYearsPlaying;
+    public int howManyYears;
     public boolean canPlayElectricGuitar;
     public boolean canPlayAcousticGuitar;
     
@@ -11,19 +11,19 @@ public class GuitarPlayer extends Musician{
         
     }
     
-    public GuitarPlayer(String name, String hometown, boolean canPlayClassicalMusic, boolean canImprovise, boolean canCompose, int howManyYearsPlaying, boolean canPlayElectricGuitar, boolean canPlayAcousticGuitar) {
+    public GuitarPlayer(String name, String hometown, boolean canPlayClassicalMusic, boolean canImprovise, boolean canCompose, int howManyYears, boolean canPlayElectricGuitar, boolean canPlayAcousticGuitar) {
         super(name, hometown, canPlayClassicalMusic, canImprovise, canCompose);
-        this.howManyYearsPlaying = howManyYearsPlaying;
+        this.howManyYears = howManyYears;
         this.canPlayElectricGuitar = canPlayElectricGuitar;
         this.canPlayAcousticGuitar = canPlayAcousticGuitar;
     }
 
-    public int getHowManyYearsPlaying() {
-        return howManyYearsPlaying;
+    public int gethowManyYears() {
+        return howManyYears;
     }
 
-    public void setHowManyYearsPlaying(int howManyYearsPlaying) {
-        this.howManyYearsPlaying = howManyYearsPlaying;
+    public void sethowManyYears(int howManyYears) {
+        this.howManyYears = howManyYears;
     }
 
     public boolean canPlayElectricGuitar() {
@@ -49,7 +49,7 @@ public class GuitarPlayer extends Musician{
                 "Pode tocar musica classica? " + canPlayClassicalMusic + '\n' +
                 "Pode improvisar? " + canImprovise + '\n' +
                 "Pode compor? " + canCompose + '\n' +
-                "Toca ha quantos anos? " + howManyYearsPlaying + '\n' +
+                "Toca ha quantos anos? " + howManyYears + '\n' +
                 "Pode tocar guitarra eletrica? " + canPlayElectricGuitar + '\n' +
                 "Pode tocar guitarra acustica? " + canPlayAcousticGuitar + '\n'
         );
