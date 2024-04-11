@@ -1,7 +1,7 @@
 package br.ufrn.imd;
 
 public class Musician extends Person{
-    public boolean canPlayClassicalMusic;
+    public boolean PlayClassicalMusic;
     public boolean canImprovise;
     public boolean canCompose;
 
@@ -12,22 +12,22 @@ public class Musician extends Person{
     }
 
     public Musician(String name, String hometown,
-                    boolean canPlayClassicalMusic,
+                    boolean PlayClassicalMusic,
                     boolean canImprovise,
                     boolean canCompose){
 
         super(name, hometown);
-        this.canPlayClassicalMusic = canPlayClassicalMusic;
+        this.PlayClassicalMusic = PlayClassicalMusic;
         this.canImprovise = canImprovise;
         this.canCompose = canCompose;
     }
 
-    public boolean CanPlayClassicalMusic() {
-        return canPlayClassicalMusic;
+    public boolean PlayClassicalMusic() {
+        return PlayClassicalMusic;
     }
 
-    public void setCanPlayClassicalMusic(boolean canPlayClassicalMusic) {
-        this.canPlayClassicalMusic = canPlayClassicalMusic;
+    public void setPlayClassicalMusic(boolean PlayClassicalMusic) {
+        this.PlayClassicalMusic = PlayClassicalMusic;
     }
 
     public boolean CanImprovise() {
@@ -49,7 +49,7 @@ public class Musician extends Person{
     public String toString(){
         return ("Musico: " + getName() + '\n' +
                 "Cidade Natal: " + getHometown() + '\n' +
-                "Pode tocar musica classica: " + canPlayClassicalMusic + '\n' +
+                "Pode tocar musica classica: " + PlayClassicalMusic + '\n' +
                 "Pode improvisar: " + canImprovise + '\n' +
                 "Pode compor: " + canCompose + '\n'
         );
