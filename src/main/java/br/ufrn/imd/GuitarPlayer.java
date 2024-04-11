@@ -11,8 +11,8 @@ public class GuitarPlayer extends Musician{
         
     }
     
-    public GuitarPlayer(String name, String hometown, boolean canPlayClassicalMusic, boolean canImprovise, boolean canCompose, int howManyYears, boolean canPlayElectricGuitar, boolean canPlayAcousticGuitar) {
-        super(name, hometown, canPlayClassicalMusic, canImprovise, canCompose);
+    public GuitarPlayer(String name, String hometown, boolean PlayClassicalMusic, boolean canImprovise, boolean canCompose, int howManyYears, boolean canPlayElectricGuitar, boolean canPlayAcousticGuitar) {
+        super(name, hometown, PlayClassicalMusic, canImprovise, canCompose);
         this.howManyYears = howManyYears;
         this.canPlayElectricGuitar = canPlayElectricGuitar;
         this.canPlayAcousticGuitar = canPlayAcousticGuitar;
@@ -46,7 +46,7 @@ public class GuitarPlayer extends Musician{
     public String toString() {
         return  ("Guitarrista: " + getName() + '\n' +
                 "Cidade Natal: " + getHometown() + '\n' +
-                "Pode tocar musica classica? " + canPlayClassicalMusic + '\n' +
+                "Pode tocar musica classica? " + PlayClassicalMusic + '\n' +
                 "Pode improvisar? " + canImprovise + '\n' +
                 "Pode compor? " + canCompose + '\n' +
                 "Toca ha quantos anos? " + howManyYears + '\n' +
