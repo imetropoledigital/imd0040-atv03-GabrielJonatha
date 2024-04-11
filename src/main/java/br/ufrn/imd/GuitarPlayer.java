@@ -4,8 +4,13 @@ public class GuitarPlayer extends Musician{
     public int howManyYearsPlaying;
     public boolean canPlayElectricGuitar;
     public boolean canPlayAcousticGuitar;
+    
     public GuitarPlayer() {
     }
+    public void playGuitar(){
+        
+    }
+    
     public GuitarPlayer(String name, String hometown, boolean canPlayClassicalMusic, boolean canImprovise, boolean canCompose, int howManyYearsPlaying, boolean canPlayElectricGuitar, boolean canPlayAcousticGuitar) {
         super(name, hometown, canPlayClassicalMusic, canImprovise, canCompose);
         this.howManyYearsPlaying = howManyYearsPlaying;
