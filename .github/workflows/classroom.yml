@@ -1,6 +1,5 @@
 name: Autograding Tests
 'on':
-- push
 - workflow_dispatch
 - repository_dispatch
 permissions:
@@ -10,13 +9,13 @@ permissions:
 jobs:
   run-autograding-tests:
     runs-on: ubuntu-latest
-    #if: github.actor != 'github-classroom[bot]'
+    if: github.actor != 'github-classroom[bot]'
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
     - name: ClassTest.existsPerson1
       id: classtest-existsperson1
-      uses: education/autograding-command-grader@v1
+      uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: ClassTest.existsPerson1
         setup-command: ''
@@ -25,7 +24,7 @@ jobs:
         max-score: 1
     - name: ClassTest.existsAttrInPerson
       id: classtest-existsattrinperson
-      uses: education/autograding-command-grader@v1
+      uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: ClassTest.existsAttrInPerson
         setup-command: ''
@@ -34,7 +33,7 @@ jobs:
         max-score: 1
     - name: ClassTest.existsMethodInPerson
       id: classtest-existsmethodinperson
-      uses: education/autograding-command-grader@v1
+      uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: ClassTest.existsMethodInPerson
         setup-command: ''
@@ -43,7 +42,7 @@ jobs:
         max-score: 1
     - name: ClassTest.existsMusician
       id: classtest-existsmusician
-      uses: education/autograding-command-grader@v1
+      uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: ClassTest.existsMusician
         setup-command: ''
@@ -52,7 +51,7 @@ jobs:
         max-score: 1
     - name: ClassTest.existsAttrInMusician
       id: classtest-existsattrinmusician
-      uses: education/autograding-command-grader@v1
+      uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: ClassTest.existsAttrInMusician
         setup-command: ''
@@ -61,7 +60,7 @@ jobs:
         max-score: 1
     - name: ClassTest.existsMethodPlayInMusician
       id: classtest-existsmethodplayinmusician
-      uses: education/autograding-command-grader@v1
+      uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: ClassTest.existsMethodPlayInMusician
         setup-command: ''
@@ -70,7 +69,7 @@ jobs:
         max-score: 1
     - name: ClassTest.existsGuitarPlayer
       id: classtest-existsguitarplayer
-      uses: education/autograding-command-grader@v1
+      uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: ClassTest.existsGuitarPlayer
         setup-command: ''
@@ -79,7 +78,7 @@ jobs:
         max-score: 1
     - name: ClassTest.existsMusicianExtendsPerson
       id: classtest-existsmusicianextendsperson
-      uses: education/autograding-command-grader@v1
+      uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: ClassTest.existsMusicianExtendsPerson
         setup-command: ''
@@ -88,7 +87,7 @@ jobs:
         max-score: 1
     - name: ClassTest.existsGuitarPlayerExtendsMusician
       id: classtest-existsguitarplayerextendsmusician
-      uses: education/autograding-command-grader@v1
+      uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: ClassTest.existsGuitarPlayerExtendsMusician
         setup-command: ''
@@ -97,7 +96,7 @@ jobs:
         max-score: 1
     - name: ClassTest.existsAttrInGuitarPlayer
       id: classtest-existsattringuitarplayer
-      uses: education/autograding-command-grader@v1
+      uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: ClassTest.existsAttrInGuitarPlayer
         setup-command: ''
@@ -106,7 +105,7 @@ jobs:
         max-score: 1
     - name: ClassTest.existsMethodPlayGuitarInGuitarPlayer
       id: classtest-existsmethodplayguitaringuitarplayer
-      uses: education/autograding-command-grader@v1
+      uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: ClassTest.existsMethodPlayGuitarInGuitarPlayer
         setup-command: ''
@@ -114,7 +113,7 @@ jobs:
         timeout: 1
         max-score: 1
     - name: Autograding Reporter
-      uses: education/autograding-grading-reporter@v1
+      uses: classroom-resources/autograding-grading-reporter@v1
       env:
         CLASSTEST-EXISTSPERSON1_RESULTS: "${{steps.classtest-existsperson1.outputs.result}}"
         CLASSTEST-EXISTSATTRINPERSON_RESULTS: "${{steps.classtest-existsattrinperson.outputs.result}}"
